@@ -1,0 +1,14 @@
+@_default:
+    {{ just_executable() }} --justfile {{ justfile() }} --list
+
+clean:
+    cargo clean
+
+doc:
+    cargo doc --open
+
+format:
+    treefmt
+
+run *args:
+    cargo run -- {{ args }}
